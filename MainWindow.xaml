@@ -5,8 +5,86 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheModernWeatherApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+         Title="MainWindow" Height="425" Width="250" WindowStartupLocation="CenterScreen"
+         WindowStyle="None" AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown"  >
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="160"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Width="250" Height="425" CornerRadius="20"
+                Background="{StaticResource cs_Background}"
+                BorderBrush="{StaticResource cs_BorderBrush}"
+                Grid.RowSpan="4" Grid.ColumnSpan="3" BorderThickness="3"/>
+        <Border Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="10"
+                CornerRadius="20 20 0 0" Background="{StaticResource cs_Background}"/>
+        <Border Grid.Row="4" Grid.ColumnSpan="3" Margin="10 0 10 10" CornerRadius="0 0 20 20"
+                Background="{StaticResource cs_Background}"/>
+        <Button Grid.Column="2" Style="{StaticResource CloseButtonStyle}" Click="Button_Click"/>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal"
+                    HorizontalAlignment="Center" Margin="0 45 0 0">
+            <Image Source="/Images/Location.png" Height="25" HorizontalAlignment="Right"/>
+            <Label x:Name="lblCityName"
+                   Content="- - -"
+                  FontFamily="Roboto"
+                   FontSize="13"
+                   Foreground="{StaticResource cs_Text}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
+            <Label Name="lblDigitalClock" 
+                   FontFamily="Roboto"
+                   FontSize="11" Foreground="{StaticResource cs_BBackground}"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Content="{Binding Path=Now, StringFormat='{}{0:hh:mm:ss tt}'}" />
+            <Border Margin="10"
+                    Height="100" Width="100"
+                    Background="{StaticResource cs_BBackground}" CornerRadius="12" Opacity="0.50">
+                <Image x:Name="imgWeatherIcon" Height="80" Width="80" SnapsToDevicePixels="True"/>
+            </Border>
+            <Label x:Name="lblCondition" FontFamily="Roboto" FontSize="10"
+                   Foreground="{StaticResource cs_Text2}" Content="- - -" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Margin="5">
+            <Image Source="/Images/temperature-icon-11095.png" Height="35"/>
+            <Label x:Name="lblTemperature"
+       FontFamily="Roboto"
+       Content="- - -"
+       FontSize="11"
+       Foreground="{StaticResource cs_Text}"
+       HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="5">
+            <Image Source="/Images/wave-png-49464.png" Height="35"/>
+            <Label x:Name="lblWindSpeed"
+       FontFamily="Roboto"
+       Content="- - -"
+       FontSize="11"
+       Foreground="{StaticResource cs_Text}"
+       HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" Margin="5">
+            <Image Source="/Images/bubbles-png-44336.png" Height="35" />
+            <Label x:Name="lblHumidity"
+                   FontFamily="Roboto"
+                   Content="- - -"
+                   FontSize="11"
+                   Foreground="{StaticResource cs_Text}"
+                   HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Margin="0 20 0 0">
+            <TextBox x:Name="txtCityName"
+                     Height="35" Width="200" Style="{StaticResource tbox_Txt}"
+                     HorizontalAlignment="Center" Tag="Please Enter City name !"/>
+            <Button Height="35" Width="200" Margin="10"
+                    x:Name="btnGetWeather" Content="Get Weather" FontFamily="Roboto" FontSize="14"
+                    Style="{StaticResource RoundedButtonStyle}" Click="btnGetWeather_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

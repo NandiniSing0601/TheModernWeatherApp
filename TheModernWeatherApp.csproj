@@ -7,4 +7,41 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\bubbles-png-44336.png" />
+    <None Remove="Images\Location.png" />
+    <None Remove="Images\power-button-icon-8343.png" />
+    <None Remove="Images\power-button-icon-8371.png" />
+    <None Remove="Images\temperature-icon-11095.png" />
+    <None Remove="Images\wave-png-49464.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Location.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\bubbles-png-44336.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\power-button-icon-8343.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\power-button-icon-8371.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\temperature-icon-11095.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\wave-png-49464.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>
