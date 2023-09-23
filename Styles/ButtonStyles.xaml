@@ -43,8 +43,8 @@
     
     <!-- #region Close Button-->
 
-    <ImageBrush x:Key="close_act" ImageSource="D:\MyProjects\TheModernWeatherApp\Images\power-button-icon-8371.png"/>
-    <ImageBrush x:Key="close_pas" ImageSource="D:\MyProjects\TheModernWeatherApp\Images\power-button-icon-8343.png"/>
+    <ImageBrush x:Key="close_act" ImageSource="/Images/power-button-icon-8371.png"/>
+    <ImageBrush x:Key="close_pas" ImageSource="/Images/power-button-icon-8343.png"/>
     <Style x:Key="CloseButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="35"/>
         <Setter Property="Width" Value="35"/>
