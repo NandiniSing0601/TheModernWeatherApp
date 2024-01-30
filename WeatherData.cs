@@ -10,7 +10,7 @@ namespace TheAccuWeatherApp
     public class Location
     {
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string NameOfLocation { get; set; }
     }
 
     public class Current

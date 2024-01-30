@@ -66,7 +66,7 @@ namespace TheModernWeatherApp
             cityName = txtCityName.Text.Trim();
             if (String.IsNullOrEmpty(cityName))
             {
-                MessageBox.Show("Please enter a city name", "City Name is missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Please enter a city name", "City NameOfLocation is missing", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             string apiUrl = $"http://api.weatherapi.com/v1/current.json?key={apiKey}&q={cityName}";
@@ -104,7 +104,7 @@ namespace TheModernWeatherApp
 
         private void DisplayWeatherData(WeatherData? weatherData)
         {
-            lblCityName.Content = weatherData.Location.Name;
+            lblCityName.Content = weatherData.Location.NameOfLocation;
             lblCondition.Content = weatherData.Current.Condition.Text;
             lblTemperature.Content = weatherData.Current.TempC + "°C";
             lblHumidity.Content = weatherData.Current.Humidity + "%";
